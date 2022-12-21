@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model skins {
+  id             String @id @default(auto()) @map("_id") @db.ObjectId
+  collectionName String
+  edition        String
+  img            String
+  price          String
+  weapon         String
+
+  @@index([edition, collectionName, weapon])
+}
