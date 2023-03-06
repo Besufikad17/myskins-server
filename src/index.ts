@@ -1,20 +1,10 @@
 import { Express } from "express";
 import express from "express";
 import { Request, Response } from "express";
-import { connect } from "mongoose";
 import { route } from "./routes/routes";
 import * as bodyParser from "body-parser";
-import * as dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
-
-dotenv.config();
-
-const url: string = process.env.MONGO_URI
-  ? process.env.MONGO_URI
-  : "mongodb://localhost:27017/ValoSkins";
-
-connect(url);
 
 const app: Express = express();
 const port = 4000;
