@@ -8,13 +8,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model skins {
+model Skins {
   id             String @id @default(auto()) @map("_id") @db.ObjectId
   collectionName String
   edition        String
   img            String
   price          String
   weapon         String
-
-  @@index([edition, collectionName, weapon])
+  v              Int        @default(0)
 }

@@ -39,8 +39,7 @@ class SkinController {
             collectionName,
             edition,
             price,
-            img,
-            v: 0,
+            img
           },
         });
         res.json({
