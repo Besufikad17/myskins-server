@@ -14,7 +14,7 @@
   
   ```console
    
-     git clone https://github.com/Besufikad17/myskins-server.git
+    git clone https://github.com/Besufikad17/myskins-server.git
 
    ```
 - Navigating to project directory
