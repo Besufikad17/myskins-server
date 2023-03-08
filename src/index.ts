@@ -13,7 +13,17 @@ app.use(bodyParser.json())
 app.use('/api', route);
 
 const options: cors.CorsOptions = {
-  origin: ["*"]
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'X-Access-Token',
+  ],
+  credentials: true,
+  methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+  origin: "*",
+  preflightContinue: false,
 };
 
 app.use(cors(options));
