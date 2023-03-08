@@ -11,7 +11,13 @@ const port = 4000;
 
 app.use(bodyParser.json())
 app.use('/api', route);
-app.use(cors());
+
+const options: cors.CorsOptions = {
+  origin: ["*"]
+};
+
+app.use(cors(options));
+
 app.use(helmet());
 
 app.get("/", (req: Request, res: Response) => {
